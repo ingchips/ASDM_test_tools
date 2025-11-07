@@ -24,6 +24,7 @@ MainWindow::MainWindow(QWidget *parent)
     sampleBits(16),
     channels(1)
 {
+    setWindowIcon(QIcon("ingchips.ico"));
     // 初始化原始字节缓冲区
     rawBuffer.resize(RAW_BUFFER_SIZE);
     // 初始化波形样本缓冲区
@@ -74,6 +75,7 @@ void MainWindow::setupGui()
     QVBoxLayout *mainLayout = new QVBoxLayout(central);
 
     QHBoxLayout *ctrlLayout = new QHBoxLayout();
+
     portCombo = new QComboBox();
     scanSerialPorts();
     ctrlLayout->addWidget(new QLabel("串口:"));
